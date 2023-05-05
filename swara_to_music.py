@@ -1,20 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# import easygui
-# from flask import Flask, render_template
-
-# app = Flask(__name__)
-
-# @app.route('/test')
-# def test():
-#     easygui.msgbox('You have just run a python script on the button press!', 'Running a Python Script via Javascript')
-#     return render_template('index.html')
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
-
 import numpy as np
 from scipy.io import wavfile
 import utils

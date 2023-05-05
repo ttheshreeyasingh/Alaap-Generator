@@ -21,8 +21,8 @@ western_notes = indToWest.sargam_to_western(aalaap, key='C')
 
 g = Grapher()
 g.plot(western_notes)
-# for i in range(len(western_notes)):
-#     print(western_notes[i], aalaap[i])
+for i in range(len(western_notes)):
+    print(western_notes[i], aalaap[i])
 
 
 
