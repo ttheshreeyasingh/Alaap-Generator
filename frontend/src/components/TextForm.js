@@ -54,9 +54,19 @@ export default function TextForm(props) {
 
         // const pathToPythonFile = '../../../swara_to_music.py';
         
-        const handleSubmit = () => {
-       console.log("hello");
-        };
+        
+            const handleSubmit = () => {
+                axios.post('http://localhost:5000/run-script')
+                  .then(response => {
+                    console.log(response.data);
+                  })
+                  .catch(error => {
+                    console.log(error);
+                  });
+                 
+              };
+              
+   
 
     return (
         <>

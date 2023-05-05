@@ -8,7 +8,7 @@ with open('raga.json', 'r') as f:
 raga = Raga(raga_data)
 aalaap = raga.run(Note("S", 1), 2, 16)
 indToWest = IndianToWestern()
-# print(aalaap)
+print(aalaap)
 
 
 # Open a new file for writing

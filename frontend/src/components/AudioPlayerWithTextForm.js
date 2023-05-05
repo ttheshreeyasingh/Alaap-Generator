@@ -20,7 +20,7 @@ const AudioPlayerWithTextForm = () => {
         <>
           <div className="row">
             <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-              <h5 style={{ textAlign: 'center' }}>Upload Raaga.json file</h5>
+              <h5 style={{ textAlign: 'center' }}>Upload Raaga.json File</h5>
               <Button variant="contained" component="label">
                 Upload
                 <input hidden accept="application/json" multiple type="file" />

@@ -1,0 +1,23 @@
+{
+  "name": "alaap-generator",
+  "version": "1.0.0",
+  "description": "An application to generate alaaps using aroh, avroh, forbidden sequences and motifs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttheshreeyasingh/Alaap-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttheshreeyasingh/Alaap-Generator/issues"
+  },
+  "homepage": "https://github.com/ttheshreeyasingh/Alaap-Generator#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}

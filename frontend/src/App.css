@@ -50,6 +50,10 @@
     background-color: #007bff;
   }
 
+  textarea {
+    opacity: 0.8;
+  }  
+
   .progress {
     height: 40px;
     margin-top: 20px;
