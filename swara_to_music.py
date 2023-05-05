@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# import easygui
+# from flask import Flask, render_template
+
+# app = Flask(__name__)
+
+# @app.route('/test')
+# def test():
+#     easygui.msgbox('You have just run a python script on the button press!', 'Running a Python Script via Javascript')
+#     return render_template('index.html')
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+
 import numpy as np
 from scipy.io import wavfile
 import utils
@@ -59,4 +73,4 @@ right_hand = utils.get_song_data(right_hand_notes, right_hand_duration, 2,
 
 data = right_hand
 data = data * (4096/np.max(data))
-wavfile.write('data/twinkle_star.wav', 44100, data.astype(np.int16))
+wavfile.write('./frontend/public/music.wav', 44100, data.astype(np.int16))

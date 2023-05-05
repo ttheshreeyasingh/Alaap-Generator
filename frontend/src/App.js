@@ -22,14 +22,14 @@ function App() {
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark');
-      // document.body.style.backgroundColor = '#042743';
-      document.body.style.backgroundImage = "url('./78e9639ba3c0.jpg')" ;
+      document.body.style.backgroundColor = '#042743';
+      // document.body.style.backgroundImage = "url('./78e9639ba3c0.jpg')" ;
       showAlert("Dark mode has been enabled", "success");
     }
     else{
       setMode('light');
-      document.body.style.backgroundImage = "url('./78e9639ba3c0.jpg')" ;
-      // document.body.style.backgroundColor = 'white';
+      // document.body.style.backgroundImage = "url('./78e9639ba3c0.jpg')" ;
+      document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
     }
   }
@@ -37,7 +37,7 @@ function App() {
  
   return (
     <>
-    <div style={{ backgroundImage: "url('./78e9639ba3c0.jpg')" }}>
+    <div >
       <Navbar title="Alaap Generation App" mode={mode} toggleMode={toggleMode} key={new Date()} />
       <Alert alert={alert} />
     

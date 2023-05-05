@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 // import { saveAs } from 'file-saver';
 // import * as FileSaver from 'file-saver';
 import axios from 'axios';
-// import * as childProcess from 'child_process';
-import { spawn } from 'child_process';
-// import childProcess from 'child_process';
+
 
 
 
@@ -15,9 +13,20 @@ export default function TextForm(props) {
     const [transcriptNumber, setTranscriptNumber] = useState(1);
     const [isAudio, setIsAudio] = useState(false);
     useEffect(() => {
+
+        const fetchText = async () => {
+            try {
+                const response = await axios.get(`${process.env.PUBLIC_URL}/aalaap.txt`);
+                setText(response.data);
+                setIsAudio(false);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
         const fetchAudio = async () => {
             try {
-                const response = await axios.get(`${process.env.PUBLIC_URL}chunk0027.wav`, {
+                const response = await axios.get(`${process.env.PUBLIC_URL}/music.wav`, {
                     responseType: 'blob'
                 });
                 const blob = new Blob([response.data]);
@@ -31,41 +40,23 @@ export default function TextForm(props) {
 
         if (props.isAudio) {
             fetchAudio();
+        }else {
+            fetchText();
         }
     }, [transcriptNumber, props.isAudio]);
 
     //Submit Button
    
    
-        const { spawn } = require('child_process');
-
+  
        
         
 
-        const pathToPythonFile = '../../../swara_to_music.py';
+        // const pathToPythonFile = '../../../swara_to_music.py';
         
         const handleSubmit = () => {
-          const process = spawn('python', [pathToPythonFile]);
-        
-          process.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
-          });
-        
-          process.stderr.on('data', (data) => {
-            console.error(`stderr: ${data}`);
-          });
-        
-          process.on('close', (code) => {
-            console.log(`child process exited with code ${code}`);
-          });
+       console.log("hello");
         };
-        
-        
-        
-
-        
-    
-
 
     return (
         <>
@@ -88,7 +79,7 @@ export default function TextForm(props) {
                         }}
                         id='myBox'
                         rows='4'
-
+                        value={text}
                     />
                 </div>
                 <div className="d-flex justify-content-center">
